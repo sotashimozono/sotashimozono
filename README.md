@@ -1,8 +1,7 @@
 # Hi there, I'm sotashimozono 👋
 
-**Theoretical Physics Researcher | Julia Developer**
-
-### 🧪 Research & Development
+Theoretical Physics Researcher | Julia Developer
+I'm master course student at the University of Tokyo
 
 - 📖 **Work**: Quantum many-body systems, Matrix Product States (MPS)
 - 🛠️ **Selected Projects**
@@ -14,8 +13,8 @@
 
 ---
 
-### 💻 Tech Stack
-
-- Language: ![Julia](https://img.shields.io/badge/-Julia-9558B2?style=flat-square&logo=julia&logoColor=white) (Primary)
+💻 Tech Stack
+- Language: ![Julia](https://img.shields.io/badge/-Julia-9558B2?style=flat-square&logo=julia&logoColor=white)
 - Tools: `Obsidian`, `VSCode`, `AntiGravity`
 
+![GitHub Activity Graph](https://github-readme-stats.vercel.app/api?username=sotashimozono&show_icons=true&theme=dark)
