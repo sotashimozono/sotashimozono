@@ -16,3 +16,7 @@ I'm master course student at the University of Tokyo
 💻 Tech Stack
 - Language: ![Julia](https://img.shields.io/badge/-Julia-9558B2?style=flat-square&logo=julia&logoColor=white)
 - Tools: `Obsidian`, `VSCode`, `AntiGravity`
+
+---
+
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=sotashimozono)](https://github.com/sotashimozono/github-readme-stats)
