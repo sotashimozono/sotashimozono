@@ -19,4 +19,4 @@ I'm master course student at the University of Tokyo
 
 ---
 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=sotashimozono)](https://github.com/sotashimozono/github-readme-stats)
+[![GitHub stats](https://github-readme-stats.vercel.app/api?username=sotashimozono)](https://github.com/sotashimozono/github-readme-stats)
