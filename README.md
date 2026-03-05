@@ -18,11 +18,7 @@ I'm master course student at the University of Tokyo
 
 ---
 
-![sotashimozono's GitHub stats](https://github-readme-stats.vercel.app/api?username=sotashimozono&show_icons=true&theme=radical)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=sotashimozono&layout=compact&theme=radical)
-
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=sotashimozono&show_icons=true&theme=radical" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sotashimozono&layout=compact&theme=radical" />
+  <img src="./profile/stats.svg" />
+  <img src="./profile/top-langs.svg" />
 </p>
