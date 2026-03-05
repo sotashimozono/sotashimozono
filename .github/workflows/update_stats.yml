@@ -26,10 +26,11 @@ jobs:
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: top-langs
-          # hide_langs で Jupyter Notebook を除外
-          options: username=sotashimozono&layout=compact&bg_color=0d1117&title_color=ff79c6&text_color=bd93f9&hide_langs=jupyter%20notebook&border_color=ff79c6
+          # hide で Jupyter Notebook を除外（※ hide_langs ではない）
+          options: username=sotashimozono&layout=compact&bg_color=0d1117&title_color=ff79c6&text_color=bd93f9&hide=jupyter%20notebook&border_color=ff79c6
           path: profile/top-langs.svg
           token: ${{ secrets.PAT_TOKEN }}
+          
       # 画像をリポジトリにコミット
       - name: Commit changes
         run: |
