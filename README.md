@@ -19,6 +19,6 @@ I'm master course student at the University of Tokyo
 ---
 
 <p align="center">
-  <img src="./profile/stats.svg" />
-  <img src="./profile/top-langs.svg" />
+  <img height="165" src="./profile/stats.svg" />
+  <img height="165" src="./profile/top-langs.svg" />
 </p>
