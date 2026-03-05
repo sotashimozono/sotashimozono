@@ -16,19 +16,20 @@ jobs:
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: stats
-          options: username=sotashimozono&show_icons=true&theme=radical
+          # カスタムカラー：背景(0d1117), タイトル(ff79c6), 数値(bd93f9), アイコン(ff79c6)
+          options: username=sotashimozono&show_icons=true&bg_color=0d1117&title_color=ff79c6&text_color=bd93f9&icon_color=ff79c6&border_color=ff79c6
           path: profile/stats.svg
           token: ${{ secrets.PAT_TOKEN }}
 
-      # 言語カードの生成
+      # 言語カードの生成（Jupyter Notebookを除外）
       - name: Generate Language Card
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: top-langs
-          options: username=sotashimozono&layout=compact&theme=radical
+          # hide_langs で Jupyter Notebook を除外
+          options: username=sotashimozono&layout=compact&bg_color=0d1117&title_color=ff79c6&text_color=bd93f9&hide_langs=jupyter%20notebook&border_color=ff79c6
           path: profile/top-langs.svg
           token: ${{ secrets.PAT_TOKEN }}
-
       # 画像をリポジトリにコミット
       - name: Commit changes
         run: |
