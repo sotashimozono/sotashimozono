@@ -9,7 +9,7 @@ I'm a Master's student at the University of Tokyo.
   - Matrix Product States (MPS)
 - 🛠️ Projects
   - [QAtlas.jl](https://github.com/sotashimozono/QAtlas.jl) : Reference of rigorous results for quantum many-body systems.
-  - [LatticeCore.jl](https://github.com/sotashimozono/LatticeCore.jl) /[Lattice2D.jl](https://github.com/sotashimozono/Lattice2D.jl) / [QuasiCrystal.jl](https://github.com/sotashimozono/QuasiCrystal.jl) : 2D lattice geometries for physics simulations.
+  - [LatticeCore.jl](https://github.com/sotashimozono/LatticeCore.jl) / [Lattice2D.jl](https://github.com/sotashimozono/Lattice2D.jl) / [QuasiCrystal.jl](https://github.com/sotashimozono/QuasiCrystal.jl) : 2D lattice geometries for physics simulations.
   - [Reversi.jl](https://github.com/sotashimozono/Reversi.jl) : Julia implementation of Reversi for gaming and ML.
 - 📝 Articles
   - [Environment-MPO (arXiv:2512.07923)](https://doi.org/10.48550/arXiv.2512.07923)
