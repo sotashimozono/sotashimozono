@@ -1,6 +1,6 @@
 # Hi there, I'm sotashimozono 👋
 
-Theoretical Physics Researcher | Julia Developer
+[WINGS-ABC](https://wings-abc.c.u-tokyo.ac.jp/) Fellow | Theoretical Physics Researcher | Julia Developer
 I'm master course student at the University of Tokyo
 
 - 📖 Work
