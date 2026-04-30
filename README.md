@@ -8,6 +8,7 @@ I'm a Master's student at the University of Tokyo.
   - Quantum many-body systems
   - Matrix Product States (MPS)
 - 🛠️ Projects
+  - [obsidian-remote-ssh](https://github.com/sotashimozono/obsidian-remote-ssh) : VS Code Remote SSH-style editing for Obsidian.
   - [QAtlas.jl](https://github.com/sotashimozono/QAtlas.jl) : Reference of rigorous results for quantum many-body systems.
   - [LatticeCore.jl](https://github.com/sotashimozono/LatticeCore.jl) / [Lattice2D.jl](https://github.com/sotashimozono/Lattice2D.jl) / [QuasiCrystal.jl](https://github.com/sotashimozono/QuasiCrystal.jl) : 2D lattice geometries for physics simulations.
   - [Reversi.jl](https://github.com/sotashimozono/Reversi.jl) : Julia implementation of Reversi for gaming and ML.
