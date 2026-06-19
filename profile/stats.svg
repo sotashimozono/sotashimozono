@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">sotashimozono's GitHub Stats, Rank: A-</title>
-        <desc id="descId">Total Stars Earned: 32, Total Commits  (last year) : 3553, Total PRs: 1523, Total Issues: 419, Contributed to (last year): 6</desc>
+        <desc id="descId">Total Stars Earned: 32, Total Commits  (last year) : 3554, Total PRs: 1523, Total Issues: 420, Contributed to (last year): 6</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 66.04516838932821;
+        stroke-dashoffset: 66.04515711772845;
       }
     }
   
@@ -207,7 +207,7 @@
         x="219.01"
         y="12.5"
         data-testid="issues"
-      >419</text>
+      >420</text>
     </g>
   </g><g transform="translate(0, 100)">
     <g class="stagger" style="animation-delay: 1050ms" transform="translate(25, 0)">
