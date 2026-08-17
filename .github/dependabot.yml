@@ -1,0 +1,20 @@
+version: 2
+
+updates:
+  # GitHub Actions — monthly.
+  # This repository has no package manifest; the only pinned third-party code
+  # is the `uses:` refs in .github/workflows/. Keeping them fresh matters here
+  # because a stale action is exactly how the stats card silently rotted:
+  # readme-tools/github-readme-stats-action@v1 kept running long after the org
+  # was renamed and v2 shipped.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Tokyo
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - github-actions
