@@ -1,0 +1,27 @@
+% PLACEHOLDER — replace this whole file with the real CV template.
+% It exists only so `Build CV` has something to compile, which lets CI prove
+% the LuaLaTeX pipeline works before the real template lands. The workflow
+% needs no changes when this file is overwritten, as long as the path stays
+% cv/cv.tex.
+%
+% luatexja is loaded to check that Japanese typesetting works in the TeX Live
+% image the action uses. Drop it if the real CV is English-only.
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{luatexja}
+\usepackage[margin=25mm]{geometry}
+\usepackage{hyperref}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries Sota Shimozono}\\[2mm]
+  \href{https://github.com/sotashimozono}{github.com/sotashimozono}
+\end{center}
+
+\section*{Placeholder}
+
+This stub verifies the LuaLaTeX build workflow.
+日本語の組版も LuaTeX-ja 経由で通ることを確認しています。
+
+\end{document}

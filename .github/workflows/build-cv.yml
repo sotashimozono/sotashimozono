@@ -1,0 +1,58 @@
+name: Build CV
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "cv/**"
+      - ".github/workflows/build-cv.yml"
+  pull_request:
+    paths:
+      - "cv/**"
+      - ".github/workflows/build-cv.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      # 生成した PDF を push し返すため
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+
+      # LuaLaTeX でコンパイル。
+      # work_in_root_file_dir で latexmk を cv/ の中で走らせ、
+      # .aux/.fls などの中間ファイルをリポジトリ直下に散らかさない。
+      - name: Compile cv.tex with LuaLaTeX
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: cv/cv.tex
+          work_in_root_file_dir: true
+          latexmk_use_lualatex: true
+
+      # PR でも成果物を確認できるようにする（PR ではコミットしない）
+      - name: Upload PDF
+        uses: actions/upload-artifact@v7
+        with:
+          name: cv-pdf
+          path: cv/cv.pdf
+          if-no-files-found: error
+
+      # main への push / 手動実行のときだけ PDF をリポジトリに反映する。
+      # PR ではビルドが通ることの確認だけで、コミットはしない。
+      - name: Commit PDF
+        if: github.event_name != 'pull_request'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cv/cv.pdf
+          if git diff --cached --quiet; then
+            echo "cv.pdf unchanged; nothing to commit."
+            exit 0
+          fi
+          git commit -m "Build CV PDF"
+          git push
