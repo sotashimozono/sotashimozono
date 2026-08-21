@@ -1,0 +1,55 @@
+% Shared style for every CV variant.
+% cv.tex (academic) inputs this, and a future resume.tex can reuse it unchanged.
+% Keep document-specific choices — which sections appear, in what order — out of
+% this file and in the driver.
+
+\usepackage[a4paper,margin=20mm]{geometry}
+\usepackage{luatexja-fontspec} % LuaTeX-ja, Japanese-capable; loads fontspec
+\usepackage{etoolbox}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=ydnt,   % year descending: newest publication first
+  maxbibnames=99, % never truncate coauthors on a CV
+  giveninits=false,
+  doi=true,
+  eprint=true,
+  url=false,
+  isbn=false,
+]{biblatex}
+
+% TeX Gyre Pagella ships with TeX Live, so this resolves inside the action image.
+\setmainfont{TeX Gyre Pagella}
+\setsansfont{TeX Gyre Heros}
+% The Japanese font is deliberately left at the LuaTeX-ja default (Harano Aji,
+% also bundled with TeX Live). Naming it explicitly risks a font lookup miss in
+% the container for no visual gain.
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\titleformat{\section}
+  {\large\scshape\bfseries}{}{0pt}{}
+  [\vspace{-8pt}\rule{\linewidth}{0.6pt}]
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+
+% \cvitem{<what>}{<when>} — one CV line: content left, dates flush right.
+% #1 may contain \\ and a nested cvbullets list.
+\newcommand{\cvitem}[2]{%
+  \par\noindent
+  \begin{minipage}[t]{0.76\linewidth}\raggedright #1\end{minipage}\hfill
+  \begin{minipage}[t]{0.22\linewidth}\raggedleft\small\itshape #2\end{minipage}%
+  \par\vspace{6pt}%
+}
+
+% Tight bullets for the detail lines under a \cvitem.
+\newlist{cvbullets}{itemize}{1}
+\setlist[cvbullets]{leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt,
+                    label=\textendash}
+
+% Bold the CV owner's own family name in the bibliography, so a reader scanning
+% a coauthor list can see the contribution at a glance.
+\renewcommand*{\mkbibnamefamily}[1]{\ifstrequal{#1}{Shimozono}{\textbf{#1}}{#1}}
