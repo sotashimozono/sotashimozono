@@ -18,41 +18,32 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      # 生成した PDF を push し返すため
-      contents: write
+    strategy:
+      # One template per job, so a broken template names itself in the check
+      # list instead of hiding behind whichever one failed first.
+      fail-fast: false
+      matrix:
+        template: [base, academic, fancy, office]
+
     steps:
       - uses: actions/checkout@v7
 
-      # LuaLaTeX でコンパイル。
-      # work_in_root_file_dir で latexmk を cv/ の中で走らせ、
-      # .aux/.fls などの中間ファイルをリポジトリ直下に散らかさない。
-      - name: Compile cv.tex with LuaLaTeX
+      # work_in_root_file_dir runs latexmk inside cv/<template>/, which is
+      # required: ../assets/... paths and the folder's .latexmkrc both resolve
+      # relative to the working directory. The shared cv/.latexmkrc then sends
+      # output to the repository-root out/<template>/.
+      - name: Compile ${{ matrix.template }}/main.tex
         uses: xu-cheng/latex-action@v4
         with:
-          root_file: cv/cv.tex
+          root_file: cv/${{ matrix.template }}/main.tex
           work_in_root_file_dir: true
           latexmk_use_lualatex: true
 
-      # PR でも成果物を確認できるようにする（PR ではコミットしない）
+      # out/ is gitignored, so the PDF is published as an artifact rather than
+      # committed back to the repository.
       - name: Upload PDF
         uses: actions/upload-artifact@v7
         with:
-          name: cv-pdf
-          path: cv/cv.pdf
+          name: cv-${{ matrix.template }}
+          path: out/${{ matrix.template }}/main.pdf
           if-no-files-found: error
-
-      # main への push / 手動実行のときだけ PDF をリポジトリに反映する。
-      # PR ではビルドが通ることの確認だけで、コミットはしない。
-      - name: Commit PDF
-        if: github.event_name != 'pull_request'
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add cv/cv.pdf
-          if git diff --cached --quiet; then
-            echo "cv.pdf unchanged; nothing to commit."
-            exit 0
-          fi
-          git commit -m "Build CV PDF"
-          git push

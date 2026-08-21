@@ -1,0 +1,132 @@
+\documentclass[11pt]{article}
+
+% TeX Gyre Schola via fontspec, not the scholax package: scholax loads the
+% Type 1 build, which carries no ToUnicode map, so copy-paste and automated
+% CV parsers read "finite" as "nite". The OpenType build extracts correctly.
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Schola}
+\usepackage[margin=1in,a4paper]{geometry}
+\setcounter{secnumdepth}{0}
+\usepackage{microtype}
+
+\usepackage{enumitem}
+\setlist[itemize]{nosep,left=0pt..1.5em}
+\setlist[enumerate]{leftmargin=*,labelsep=\parindent,label=[{\arabic*}]}
+
+\usepackage{titlesec}
+% \titlespacing{\section}{0pt}{*4}{*1}
+\titlespacing{\subsection}{0pt}{*2.5}{-\parskip}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\titleformat{\section}{\large\bfseries\uppercase}{}{}{}[\titlerule]
+\titleformat*{\subsection}{\large\bfseries}
+\titleformat*{\subsubsection}{\bfseries\itshape}
+
+\pagestyle{empty}
+
+% biblatex/biber, not bibentry/bibtex: BibTeX cannot write outside the
+% document tree under openout_any=p, so it is incompatible with building
+% into the repository-root out/. Matches base/main.tex and acad-many.tex.
+\usepackage[backend=biber, style=trad-plain, doi=true, url=false, isbn=false,
+            giveninits=false, maxbibnames=99]{biblatex}
+\addbibresource{../assets/publications.bib}
+\addbibresource{../assets/oral.bib}
+\addbibresource{../assets/poster.bib}
+
+
+\begin{document}
+
+\begin{center}
+	\begin{minipage}{0.5\textwidth}
+		{\Huge\bfseries Sota Shimozono} \\ \medskip
+		Department of Basic Science \\
+		Graduate School of Arts and Sciences \\
+		The University of Tokyo
+	\end{minipage} \hfill
+	\begin{minipage}{0.4\textwidth}
+		\raggedleft
+		Email: shimozono-sota631@g.ecc.u-tokyo.ac.jp \\
+		GitHub: github.com/sotashimozono
+		% ORCID is the identifier a reader of an academic CV looks for.
+		% Add it here once registered:
+		% \\ ORCID: 0000-0000-0000-0000
+	\end{minipage}
+\end{center}
+
+\section{Research Interests}
+%==========================
+\begin{itemize}
+	\item Tensor-network methods for one-dimensional quantum many-body systems.
+	\item Finite-temperature dynamics and thermal pure quantum states.
+	\item Typicality and the sampling cost of thermal pure quantum ensembles.
+\end{itemize}
+
+\section{Education}
+%==================
+\subsection{The University of Tokyo \hfill Apr 2025 -- Mar 2027 (Expected)}
+\subsubsection{Master of Science, Department of Basic Science}
+\begin{itemize}
+	\item Graduate School of Arts and Sciences.
+	\item Research topic: one-dimensional quantum many-body systems.
+	% Naming the supervisor is standard on an academic CV. Uncomment once
+	% confirmed; it is inferred here only from co-authorship, not recorded.
+	% \item Advisor: Chisa Hotta.
+\end{itemize}
+
+\subsection{The University of Tokyo \hfill Apr 2021 -- Mar 2025}
+\subsubsection{Bachelor of Arts and Sciences, Department of Integrated Sciences}
+\begin{itemize}
+	\item Subcourse in Mathematical Natural Sciences.
+\end{itemize}
+
+\section{Fellowships}
+%====================
+\subsection{WINGS-ABC Fellow \hfill \mbox{2025 -- 2030}}
+\begin{itemize}
+	\item World-leading INnovative Graduate Study Program of Advanced Basic Science Course, The University of Tokyo.
+	\item Selected by written application and interview; carries a stipend.
+\end{itemize}
+
+\section{Publications}
+%=====================
+% series/resume keeps one running number across publications and
+% presentations, so an entry can be cited unambiguously as [n].
+\begin{enumerate}[series=cvrefs, label={[\arabic*]}]
+	\item \fullcite{shimozono2026envmpo}
+\end{enumerate}
+
+\section{Presentations}
+%======================
+\subsection{Oral}
+\begin{enumerate}[resume=cvrefs, label={[\arabic*]}]
+	\item \fullcite{shimozono2025jps_hiroshima}
+	\item \fullcite{shimozono2025jps_online}
+\end{enumerate}
+
+\subsection{Poster}
+\begin{enumerate}[resume=cvrefs, label={[\arabic*]}]
+	\item \fullcite{shimozono2025tnsaa}
+	\item \fullcite{shimozono2025ttqm}
+\end{enumerate}
+
+\section{Teaching}
+%=================
+\subsection{Teaching Assistant, College of Arts and Sciences \hfill Apr 2024 -- Present}
+\begin{itemize}
+	\item Twelve assignments across six subjects and six semesters, peaking at four concurrent courses in 2025A with over 40 contact sessions in that term alone.
+	\item Introductory Physics Experiments --- 2024S, 2024A, 2025S, 2025A.
+	\item Electromagnetism --- 2024A (two sections), 2026A (scheduled).
+	\item Oscillations and Waves --- 2025S, 2025A.
+	\item Quantum Mechanics --- 2025A.
+	\item Exercises in Mathematical Sciences --- 2025A.
+	\item Introduction to Physics --- 2026S.
+\end{itemize}
+
+\section{Software}
+%=================
+\begin{itemize}
+	\item \textbf{QAtlas.jl} --- Julia package collecting rigorous reference results for quantum many-body systems, for use as exact test data.
+	\item \textbf{doiget} --- Rust CLI and stdio MCP server resolving DOIs and arXiv IDs to local PDFs through open-access APIs. On crates.io and the MCP Registry.
+	\item Several smaller Julia packages in the General registry, covering lattice construction, quasicrystals, parameter handling, and CI tooling.
+\end{itemize}
+
+\end{document}

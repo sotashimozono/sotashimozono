@@ -1,0 +1,157 @@
+%-------------------------
+% Rover Resume - Base Template
+% Link: https://github.com/subidit/rover-resume
+%
+% Shows code for various formatting options for different resume sections.
+% Education and Projects have single-line headers; while Experience uses double-line.
+% Some formatting codes are kept inline; consider \newcommand{cmd}{def}.
+% Excludes hyperref and icons for readability; MVP version.
+% Explore other templates for more options.
+% Mix and match as desired. Be consistent with headers and sub-headers.
+%------------------------
+
+\documentclass[11pt]{article} % fontsize 10pt/11pt/12pt
+
+\usepackage[margin=1in, a4paper]{geometry}
+\setcounter{secnumdepth}{0} % remove section numbering
+\usepackage{titlesec}
+\titlespacing{\subsection}{0pt}{*0}{*0} % remove vertical spacing above and below
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\titleformat{\section}{\large\bfseries\uppercase}{}{}{}[\titlerule]
+\titleformat*{\subsubsection}{\large\itshape}
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep,left=0pt .. \parindent}
+\pagestyle{empty} % remove page number
+
+% Bibliographies live in cv/assets/, split by kind so each section draws from
+% its own file. doi=true keeps the DOI visible: APS's new DOI format cannot be
+% guessed from volume/page, so it is the only manual path back to the paper.
+\usepackage[backend=biber, style=trad-plain, doi=true, url=false, isbn=false,
+            giveninits=false, maxbibnames=99]{biblatex}
+\addbibresource{../assets/publications.bib}
+\addbibresource{../assets/oral.bib}
+\addbibresource{../assets/poster.bib}
+
+
+\begin{document}
+
+\begin{center}
+	\begin{minipage}{0.5\textwidth}
+		{\Huge\bfseries
+			Sota Shimozono % Name Here
+		} \\ \medskip
+	\end{minipage} \hfill
+	\begin{minipage}{0.4\textwidth}
+		\raggedleft
+		Email: shimozono-sota631@g.ecc.u-tokyo.ac.jp \\
+		LinkedIn: linkedin.com/in/sota-shimozono-07a696263 \\
+		GitHub: github.com/sotashimozono
+	\end{minipage}
+\end{center}
+
+\section{Education}
+%=================%
+\subsection{University of Tokyo $|$ {\normalfont\itshape Master of Science} \hfill Apr 2025 -- Mar 2027 (Expected)}
+\begin{itemize}
+	\item Department of Basic Science, Graduate School of Arts and Sciences
+	\item Research topic: One-dimensional quantum many-body systems
+	\item Related Coursework: Computational Physics
+	\item Intending to pursue a Ph.D. program
+\end{itemize}
+\subsection{University of Tokyo $|$ {\normalfont\itshape Bachelor of Arts and Sciences} \hfill Apr 2021 -- Mar 2025}
+\begin{itemize}
+	\item Department of Integrated Sciences, Subcourse in Mathematical Natural Sciences
+	\item Related Coursework: Mathematics, Physics, Computational Physics
+\end{itemize}
+
+\section{Fellowships}
+%====================%
+\begin{enumerate}[label=\null, left=0pt..0pt, itemsep=2pt]
+	\item {\bfseries WINGS-ABC Fellow}, The University of Tokyo \hfill \mbox{2025 -- 2030} \newline
+	World-leading INnovative Graduate Study Program of Advanced Basic Science Course; selected by written application and interview, with a stipend.
+\end{enumerate}
+
+\section{Publications}
+%=====================%
+% series/resume keeps one running number across Publications and
+% Presentations, so an entry can be cited unambiguously as [n].
+\begin{enumerate}[series=cvrefs, label={[\arabic*]}, left=0pt..\parindent, itemsep=2pt]
+	\item \fullcite{shimozono2026envmpo} \newline
+	Recovers thermodynamic-limit bulk behavior by attaching environment operators to both ends of a finite-size calculation, without an infinite-size algorithm.
+\end{enumerate}
+
+\section{Presentations}
+%======================%
+\subsection{Orals}
+\begin{enumerate}[resume=cvrefs, label={[\arabic*]}, left=0pt..\parindent, itemsep=2pt]
+	\item \fullcite{shimozono2025jps_hiroshima}
+	\item \fullcite{shimozono2025jps_online}
+\end{enumerate}
+
+\subsection{Posters}
+\begin{enumerate}[resume=cvrefs, label={[\arabic*]}, left=0pt..\parindent, itemsep=2pt]
+	\item \fullcite{shimozono2025tnsaa}
+	\item \fullcite{shimozono2025ttqm}
+\end{enumerate}
+
+\section{Experience}
+%=================%
+\subsection{The University of Tokyo, College of Arts and Sciences \hfill Komaba, Tokyo}
+\subsubsection{Teaching Assistant \hfill Apr 2024 -- Present}
+\begin{itemize}
+	\item Twelve assignments across six subjects and six semesters, peaking at four concurrent courses in 2025A with over 40 contact sessions in that term alone:
+	\begin{itemize}
+		\item Introductory Physics Experiments --- 2024S, 2024A, 2025S, 2025A
+		\item Electromagnetism --- 2024A (two sections), 2026A (scheduled)
+		\item Oscillations and Waves --- 2025S, 2025A
+		\item Quantum Mechanics --- 2025A
+		\item Exercises in Mathematical Sciences --- 2025A
+		\item Introduction to Physics --- 2026S
+	\end{itemize}
+	\item Developed \texttt{BlochSpins.jl}, an open-source Julia package for simulating and visualizing quantum states on the Bloch sphere, to address common student inquiries in Quantum Mechanics.
+\end{itemize}
+
+\subsection{NPO Mochikoma $|$ KOMAD student community space \hfill Komaba, Tokyo}
+\subsubsection{Director \hfill 2024 -- Present} % TODO: confirm the year the directorship started
+\subsubsection{Steering Committee Member \hfill Mar 2023 -- Nov 2024}
+\begin{itemize}
+	\item Management of the space and community.
+	\item Organized the community barbecue in 2023 and 2024.
+	\item Changed the operating policy of the space in Nov 2024, re-establishing membership on new terms.
+\end{itemize}
+
+\subsection{KUREHA, University of Tokyo Tea Society \hfill Komaba, Tokyo}
+\subsubsection{President \hfill Apr 2023 -- Mar 2025}
+\subsubsection{Vice President \hfill Apr 2022 -- Mar 2023}
+\begin{itemize}
+	\item Developed an original milk-tea blend and took it to commercial release.
+	\item Ran a pop-up tea cafe at Gallery Cafe NICCO at Shin-Nakano, an off-campus venue (2023).
+	\item Joined a tea-leaf sourcing trip to Sri Lanka with WonderLinks (Feb 2025).
+\end{itemize}
+
+\subsection{University of Tokyo Frontier Runners \hfill Samani, Hokkaido}
+\subsubsection{Volunteer, educational outreach \hfill Aug 2022 -- Aug 2024}
+\begin{itemize}
+	\item Took part in five field sessions over three years, from summer 2022 to summer 2024.
+	\item Supported study and university-entrance preparation for local high-school students.
+\end{itemize}
+
+\section{Skills \& Interests}
+%===========================%
+\begin{description}[itemsep=0pt]
+	\item[Technical] Julia / Rust / Python / TypeScript / Lean 4 / \LaTeX{} / Git / GitHub Actions
+	\item[Research] Tensor networks (MPS, DMRG, TDVP) / quantum many-body physics / numerical linear algebra / HPC on shared clusters
+	\item[Language] Japanese (native) / English (research reading and writing, everyday conversation)
+	\item[Interests] Tea / Coffee / Cocktails / Community Building / Open Source Software
+\end{description}
+
+\section{Open Source}
+%====================%
+\begin{itemize}
+	\item {\bfseries obsidian-remote-ssh} --- Obsidian plugin for editing remote vaults over SSH/SFTP. Built in TypeScript and Go. Listed in the Obsidian community plugin directory.
+	\item {\bfseries doiget} --- CLI and stdio MCP server that resolves DOIs and arXiv IDs to local PDFs through open-access APIs. Built in Rust and served on crates.io and the MCP Registry.
+	\item {\bfseries QAtlas.jl} --- Julia package collecting rigorous reference results for quantum many-body systems.
+	\item Several smaller Julia packages in the General registry, covering lattice construction, quasicrystals, parameter handling, and CI tooling.
+\end{itemize}
+
+\end{document}

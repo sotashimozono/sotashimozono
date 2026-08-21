@@ -1,6 +1,7 @@
-# LaTeX intermediates.
-# cv/cv.pdf is deliberately NOT ignored: the Build CV workflow commits it so
-# the README can link to a stable path.
+# Build output
+/out/
+
+# LaTeX auxiliaries
 *.aux
 *.bbl
 *.bcf
@@ -8,8 +9,27 @@
 *.fdb_latexmk
 *.fls
 *.log
-*.out
 *.run.xml
 *.synctex.gz
+*.synctex(busy)
 *.toc
+*.lof
+*.lot
+*.idx
+*.ind
+*.ilg
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.nav
+*.snm
+*.vrb
 *.xdv
+_minted*/
+
+__pycache__/
+refs/tmp/
