@@ -15,15 +15,65 @@ on:
 permissions:
   contents: read
 
+env:
+  # cv/templates.json decides what is built and what is published. No template
+  # is named anywhere in this file.
+  CONFIG: cv/templates.json
+  # A rolling tag, so the download URL in README.md never changes.
+  RELEASE_TAG: cv-latest
+
 jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      build: ${{ steps.plan.outputs.build }}
+      publish: ${{ steps.plan.outputs.publish }}
+
+    steps:
+      - uses: actions/checkout@v7
+
+      # Checked in both directions. A template missing from the config would
+      # otherwise never be built while the run stayed green, leaving a stale
+      # PDF on the release; a config entry with no directory would fail deep
+      # inside latexmk instead of naming itself here.
+      - name: Check the config and cv/ name the same templates
+        run: |
+          declared=$(jq -r '.templates[].dir' "$CONFIG" | sort)
+          present=$(find cv -mindepth 2 -maxdepth 2 -name main.tex -printf '%h\n' | xargs -r -n1 basename | sort)
+          if [ "$declared" != "$present" ]; then
+            echo "::error::$CONFIG does not match the template directories under cv/"
+            diff <(echo "$declared") <(echo "$present") | sed 's|^<|  only in config: |; s|^>|  only on disk: |' || true
+            exit 1
+          fi
+
+      # Every template builds to main.pdf, so published ones need a distinct
+      # asset name or they would overwrite each other on the release.
+      - name: Check published templates name a unique asset
+        run: |
+          published=$(jq '[.templates[] | select(.publish)] | length' "$CONFIG")
+          named=$(jq '[.templates[] | select(.publish) | .asset | select(type == "string" and length > 0)] | unique | length' "$CONFIG")
+          if [ "$published" != "$named" ]; then
+            echo "::error::every template with publish: true needs a unique, non-empty asset name"
+            jq -r '.templates[] | select(.publish) | "  \(.dir) -> \(.asset // "(missing)")"' "$CONFIG"
+            exit 1
+          fi
+
+      - id: plan
+        run: |
+          {
+            echo "build=$(jq -c '[.templates[].dir]' "$CONFIG")"
+            echo "publish=$(jq -c '[.templates[] | select(.publish) | .dir]' "$CONFIG")"
+          } >> "$GITHUB_OUTPUT"
+
   build:
+    needs: plan
     runs-on: ubuntu-latest
     strategy:
-      # One template per job, so a broken template names itself in the check
+      # One job per template, so a broken template names itself in the check
       # list instead of hiding behind whichever one failed first.
       fail-fast: false
       matrix:
-        template: [base, academic, fancy, office]
+        template: ${{ fromJSON(needs.plan.outputs.build) }}
 
     steps:
       - uses: actions/checkout@v7
@@ -39,11 +89,48 @@ jobs:
           work_in_root_file_dir: true
           latexmk_use_lualatex: true
 
-      # out/ is gitignored, so the PDF is published as an artifact rather than
-      # committed back to the repository.
       - name: Upload PDF
         uses: actions/upload-artifact@v7
         with:
           name: cv-${{ matrix.template }}
           path: out/${{ matrix.template }}/main.pdf
           if-no-files-found: error
+
+  release:
+    needs: [plan, build]
+    # Pull requests build but do not publish. A config that publishes nothing
+    # skips the job rather than failing on an empty upload.
+    if: github.event_name != 'pull_request' && needs.plan.outputs.publish != '[]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/download-artifact@v7
+        with:
+          path: artifacts
+
+      # out/ is gitignored, and a PDF is a fresh blob on every build rather
+      # than a diff, so the PDFs go to a release instead of being committed
+      # back the way profile/*.svg is.
+      - name: Name the PDFs for download
+        run: |
+          mkdir -p release
+          while IFS=$'\t' read -r dir asset; do
+            cp "artifacts/cv-$dir/main.pdf" "release/$asset"
+          done < <(jq -r '.templates[] | select(.publish) | "\(.dir)\t\(.asset)"' "$CONFIG")
+          ls -l release
+
+      # The tag stays where it was first created so the URL is stable; the
+      # notes carry the commit the assets were actually built from.
+      - name: Publish to the rolling CV release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release create "$RELEASE_TAG" --title "CV" --notes "Building."
+          fi
+          gh release upload "$RELEASE_TAG" release/* --clobber
+          gh release edit "$RELEASE_TAG" --title "CV" --notes "Built from ${GITHUB_SHA} on $(date -u '+%Y-%m-%d')."
