@@ -1,0 +1,22 @@
+{
+  "templates": [
+    {
+      "dir": "academic",
+      "publish": true,
+      "asset": "sota-shimozono-cv-academic.pdf"
+    },
+    {
+      "dir": "base",
+      "publish": true,
+      "asset": "sota-shimozono-cv.pdf"
+    },
+    {
+      "dir": "fancy",
+      "publish": false
+    },
+    {
+      "dir": "office",
+      "publish": false
+    }
+  ]
+}

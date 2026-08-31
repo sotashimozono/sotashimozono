@@ -4,6 +4,9 @@ I'm a Master's student at the University of Tokyo.
 
 **[WINGS-ABC](https://wings-abc.c.u-tokyo.ac.jp/) Fellow** | **Theoretical Physics Researcher** | **Julia Developer**
 
+- 📄 CV
+  - [Academic CV](https://github.com/sotashimozono/sotashimozono/releases/download/cv-latest/sota-shimozono-cv-academic.pdf) : publications, presentations, and fellowships.
+  - [General CV](https://github.com/sotashimozono/sotashimozono/releases/download/cv-latest/sota-shimozono-cv.pdf) : everything else.
 - 📖 Work
   - Quantum many-body systems
   - Matrix Product States (MPS)
