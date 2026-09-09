@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">sotashimozono&#39;s GitHub Stats, Rank: A</title>
-        <desc id="descId">Total Stars Earned: 50, Total Commits  (last year) : 5481, Total PRs: 2503, Total Issues: 734, Contributed to (last year): 43</desc>
+        <desc id="descId">Total Stars Earned: 52, Total Commits  (last year) : 5498, Total PRs: 2516, Total Issues: 735, Contributed to (last year): 44</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,11 +73,12 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 53.5234409519462;
+        stroke-dashoffset: 52.70210905374132;
       }
     }
   
   
+          
 
           
       /* Animations */
@@ -102,9 +103,15 @@
         </style>
 
         
+        <defs>
+          
+          
+        </defs>
+        
 
         <rect
           data-testid="card-bg"
+          class="card-bg"
           x="0.5"
           y="0.5"
           rx="4.5"
@@ -162,7 +169,7 @@
         x="224.01"
         y="12.5"
         data-testid="stars"
-      >50</text>
+      >52</text>
     </g>
   </g><g transform="translate(0, 25)">
     <g class="stagger" style="animation-delay: 600ms" transform="translate(25, 0)">
@@ -207,7 +214,7 @@
         x="224.01"
         y="12.5"
         data-testid="issues"
-      >734</text>
+      >735</text>
     </g>
   </g><g transform="translate(0, 100)">
     <g class="stagger" style="animation-delay: 1050ms" transform="translate(25, 0)">
@@ -222,7 +229,7 @@
         x="224.01"
         y="12.5"
         data-testid="contribs"
-      >43</text>
+      >44</text>
     </g>
   </g>
     </svg>
