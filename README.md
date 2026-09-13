@@ -26,6 +26,7 @@ I'm a Master's student at the University of Tokyo.
 - 💼 Work & Availability
   - Open for collaborations, feel free to contact me.
   - 📩 **Contact:** `shimozono-sota631@g.ecc.u-tokyo.ac.jp`
+  - ☕ **Support:** If my tools or research helped you, [Buy Me a Coffee](https://buymeacoffee.com/sotashimozono)
 
 ---
 
