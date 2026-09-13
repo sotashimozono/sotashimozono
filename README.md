@@ -6,12 +6,6 @@ I'm a Master's student at the University of Tokyo.
 
 ---
 
-### 💼 Work & Availability
-I am open for collaborations.
-* 📩 **Contact:** `shimozono-sota631@g.ecc.u-tokyo.ac.jp`
-
----
-
 - 📄 CV
   - [Academic CV](https://github.com/sotashimozono/sotashimozono/releases/download/cv-latest/sota-shimozono-cv-academic.pdf) : publications, presentations, and fellowships.
   - [General CV](https://github.com/sotashimozono/sotashimozono/releases/download/cv-latest/sota-shimozono-cv.pdf) : everything else.
@@ -29,6 +23,9 @@ I am open for collaborations.
 - 💻 Tech Stack
   - Language: ![Julia](https://img.shields.io/badge/-Julia-9558B2?style=flat-square&logo=julia&logoColor=white) ![Rust](https://img.shields.io/badge/-Rust-000000?style=flat-square&logo=rust&logoColor=white) ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
   - Tools: `Obsidian`/`VSCode`/`AntiGravity`/`ClaudeCode`
+- 💼 Work & Availability
+  - Open for collaborations, feel free to contact me.
+  - 📩 **Contact:** `shimozono-sota631@g.ecc.u-tokyo.ac.jp`
 
 ---
 
