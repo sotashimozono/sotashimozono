@@ -38,7 +38,8 @@ jobs:
       - name: Generate Notable Contributions
         uses: lowlighter/metrics@v3.34
         with:
-          token: ${{ secrets.PAT_TOKEN }}
+          # 公開情報しか読まないので標準のトークンで足りる（fine-grained PAT は非対応）
+          token: ${{ secrets.GITHUB_TOKEN }}
           user: sotashimozono
           filename: notable.svg
           # コミットは下のステップでまとめて行う
