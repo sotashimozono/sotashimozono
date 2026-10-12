@@ -7,8 +7,8 @@ I'm a Master's student at the University of Tokyo.
 ---
 
 - 📄 CV
-  - [Academic CV](https://github.com/sotashimozono/sotashimozono/releases/download/cv-latest/sota-shimozono-cv-academic.pdf) : publications, presentations, and fellowships.
-  - [General CV](https://github.com/sotashimozono/sotashimozono/releases/download/cv-latest/sota-shimozono-cv.pdf) : everything else.
+  - [Academic CV](https://codes.sota-shimozono.com/cv/academic/) : publications, presentations, and fellowships.
+  - [General CV](https://codes.sota-shimozono.com/cv/general/) : everything else.
 - 📖 Work
   - Quantum many-body systems especially in one-dimension
   - Matrix Product States (MPS) / Tensor Network states and algorithms
