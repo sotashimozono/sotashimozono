@@ -34,24 +34,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
 
-      # 外部プロジェクトへの貢献。自分の org のリポジトリはスター数の下限で外す
-      - name: Generate Notable Contributions
-        uses: lowlighter/metrics@v3.34
-        with:
-          # classic PAT（スコープなし）が必要。fine-grained PAT と GITHUB_TOKEN では動かない
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: sotashimozono
-          filename: notable.svg
-          # コミットは下のステップでまとめて行う
-          output_action: none
-          base: ""
-          plugin_notable: yes
-          plugin_notable_from: all
-          plugin_notable_repositories: yes
-          plugin_notable_filter: stars:>5
-
-      - name: Collect Notable Contributions
-        run: sudo cp /metrics_renders/notable.svg profile/notable.svg
+      # 外部プロジェクトへの貢献カード。上の 2 枚と同じ配色で自前で描く
+      - name: Generate Contributions Card
+        env:
+          # 公開情報だけを読む。標準のトークンは非公開リポジトリを含む問い合わせで失敗するため PAT を使う
+          GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: python3 .github/scripts/contributions_card.py
 
       # 画像をリポジトリにコミット
       - name: Commit changes
