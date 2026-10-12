@@ -36,5 +36,5 @@ I'm a Master's student at the University of Tokyo.
 </p>
 
 <p align="center">
-  <img src="./profile/notable.svg" alt="Open source projects I have contributed to" />
+  <img src="./profile/contributions.svg" alt="Open source projects I have contributed to" />
 </p>
