@@ -2,7 +2,7 @@
 
 I'm a Master's student at the University of Tokyo.
 
-**[WINGS-ABC](https://wings-abc.c.u-tokyo.ac.jp/) Fellow** | **Theoretical Physics Researcher** | **Systems & Julia Developer**
+**[JSPS](https://www.jsps.go.jp/english/e-pd/) Research Fellow (DC1, from Apr 2027)** | **[WINGS-ABC](https://wings-abc.c.u-tokyo.ac.jp/) Fellow** | **Theoretical Physics Researcher** | **Systems & Julia Developer**
 
 ---
 
