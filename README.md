@@ -34,7 +34,3 @@ I'm a Master's student at the University of Tokyo.
   <img src="./profile/stats.svg" />
   <img src="./profile/top-langs.svg" />
 </p>
-
-<p align="center">
-  <img src="./profile/contributions.svg" alt="Open source projects I have contributed to" />
-</p>
