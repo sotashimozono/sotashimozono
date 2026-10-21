@@ -1,6 +1,6 @@
 <svg width="771" height="266" viewBox="0 0 771 266" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="descId">
   <title id="titleId">Open source contributions</title>
-  <desc id="descId">Projects with commits by sotashimozono: JuliaRegistries/General, finch-tensor/Finch.jl, ITensor/ITensorMPS.jl, JuliaIO/JSON.jl, FluxML/NNlib.jl, JuliaObjects/Accessors.jl, JuliaGeometry/GeometryBasics.jl, JuliaSparse/SparseArrays.jl, JuliaLinearAlgebra/InfiniteLinearAlgebra.jl, JuliaWeb/OpenSSL.jl, JuliaApproximation/QuasiArrays.jl, julia-vscode/JuliaWorkspaces.jl, stablyai/orca</desc>
+  <desc id="descId">Projects with commits by sotashimozono: JuliaRegistries/General, finch-tensor/Finch.jl, ITensor/ITensorMPS.jl, JuliaIO/JSON.jl, FluxML/NNlib.jl, JuliaObjects/Accessors.jl, JuliaGeometry/GeometryBasics.jl, JuliaSparse/SparseArrays.jl, JuliaGraphics/ColorVectorSpace.jl, JuliaLinearAlgebra/InfiniteLinearAlgebra.jl, JuliaWeb/OpenSSL.jl, JuliaApproximation/QuasiArrays.jl, julia-vscode/JuliaWorkspaces.jl, stablyai/orca</desc>
   <style>
     .header { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #ff79c6; }
     .name { font: 600 13px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: #bd93f9; }
@@ -16,11 +16,12 @@
   <text x="405" y="100" class="name"><tspan class="owner">JuliaIO/</tspan>JSON.jl</text><text x="745" y="100" class="detail" text-anchor="end">1 PR · <tspan class="star">★</tspan> 359</text>
   <text x="25" y="128" class="name"><tspan class="owner">FluxML/</tspan>NNlib.jl</text><text x="365" y="128" class="detail" text-anchor="end">1 PR · <tspan class="star">★</tspan> 259</text>
   <text x="405" y="128" class="name"><tspan class="owner">JuliaObjects/</tspan>Accessors.jl</text><text x="745" y="128" class="detail" text-anchor="end">1 PR · <tspan class="star">★</tspan> 234</text>
-  <text x="25" y="156" class="name"><tspan class="owner">JuliaGeometry/</tspan>GeometryBasics.jl</text><text x="365" y="156" class="detail" text-anchor="end">1 PR · <tspan class="star">★</tspan> 215</text>
+  <text x="25" y="156" class="name"><tspan class="owner">JuliaGeometry/</tspan>GeometryBasics.jl</text><text x="365" y="156" class="detail" text-anchor="end">1 PR · <tspan class="star">★</tspan> 216</text>
   <text x="405" y="156" class="name"><tspan class="owner">JuliaSparse/</tspan>SparseArrays.jl</text><text x="745" y="156" class="detail" text-anchor="end">1 PR · <tspan class="star">★</tspan> 109</text>
-  <text x="25" y="184" class="name"><tspan class="owner">JuliaLinearAlgebra/</tspan>InfiniteLinearAlgebra.jl</text><text x="365" y="184" class="detail" text-anchor="end">1 PR · <tspan class="star">★</tspan> 35</text>
-  <text x="405" y="184" class="name"><tspan class="owner">JuliaWeb/</tspan>OpenSSL.jl</text><text x="745" y="184" class="detail" text-anchor="end">1 PR · <tspan class="star">★</tspan> 19</text>
-  <text x="25" y="212" class="name"><tspan class="owner">JuliaApproximation/</tspan>QuasiArrays.jl</text><text x="365" y="212" class="detail" text-anchor="end">1 PR · <tspan class="star">★</tspan> 11</text>
-  <text x="405" y="212" class="name"><tspan class="owner">julia-vscode/</tspan>JuliaWorkspaces.jl</text><text x="745" y="212" class="detail" text-anchor="end">1 PR · <tspan class="star">★</tspan> 11</text>
-  <text x="25" y="240" class="name"><tspan class="owner">stablyai/</tspan>orca</text><text x="365" y="240" class="detail" text-anchor="end"><tspan class="star">★</tspan> 98.5k</text>
+  <text x="25" y="184" class="name"><tspan class="owner">JuliaGraphics/</tspan>ColorVectorSpace.jl</text><text x="365" y="184" class="detail" text-anchor="end">1 PR · <tspan class="star">★</tspan> 58</text>
+  <text x="405" y="184" class="name"><tspan class="owner">JuliaLinearAlgebra/</tspan>InfiniteLinearAlgebra.jl</text><text x="745" y="184" class="detail" text-anchor="end">1 PR · <tspan class="star">★</tspan> 35</text>
+  <text x="25" y="212" class="name"><tspan class="owner">JuliaWeb/</tspan>OpenSSL.jl</text><text x="365" y="212" class="detail" text-anchor="end">1 PR · <tspan class="star">★</tspan> 19</text>
+  <text x="405" y="212" class="name"><tspan class="owner">JuliaApproximation/</tspan>QuasiArrays.jl</text><text x="745" y="212" class="detail" text-anchor="end">1 PR · <tspan class="star">★</tspan> 11</text>
+  <text x="25" y="240" class="name"><tspan class="owner">julia-vscode/</tspan>JuliaWorkspaces.jl</text><text x="365" y="240" class="detail" text-anchor="end">1 PR · <tspan class="star">★</tspan> 11</text>
+  <text x="405" y="240" class="name"><tspan class="owner">stablyai/</tspan>orca</text><text x="745" y="240" class="detail" text-anchor="end"><tspan class="star">★</tspan> 100k</text>
 </svg>
